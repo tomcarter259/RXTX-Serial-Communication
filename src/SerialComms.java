@@ -1,3 +1,5 @@
+package serialComms;
+
 import java.io.*;
 import java.util.Enumeration;
 import gnu.io.*;
