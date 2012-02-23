@@ -17,6 +17,15 @@ public class SerialComms {
 	static OutputStream       outputStream;
 	static boolean            outputBufferEmptyFlag=false;
 
+	/**
+	 * Disconnects from the serial port.
+	 *
+	 */
+	public void disconnect()
+	{
+		serialPort.close();
+		System.out.println("[SerialComms] Port disconnected");
+	}
 
 	/**
 	 * Connects to the serial port.
