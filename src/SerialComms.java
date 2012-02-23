@@ -41,6 +41,29 @@ public class SerialComms {
 	}
 
 	/**
+	 * Converts a char to a byte and transmits it across the serial link
+	 *
+	 * @param c The char to be transmitted
+	 * @return The success or failure of the transmission
+	 */
+	public boolean transmit(char c)
+	{
+		boolean success = true;
+
+		try
+		{
+			outputStream.write((byte)c);
+		}
+		catch (IOException e)
+		{
+			System.out.println("[SerialComms] Error transmitting char: " + c);
+			success = false;
+		}
+
+		return success;
+	}
+
+	/**
 	 * Disconnects from the serial port.
 	 *
 	 */
