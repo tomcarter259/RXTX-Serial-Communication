@@ -18,6 +18,29 @@ public class SerialComms {
 	static boolean            outputBufferEmptyFlag=false;
 
 	/**
+	 * Transmits a byte across the serial link.
+	 *
+	 * @param b The byte to be transmitted
+	 * @return The success or failure of the transmission
+	 */
+	public boolean transmit(byte b)
+	{
+		boolean success = true;
+
+		try
+		{
+			outputStream.write(b);
+		}
+		catch (IOException e)
+		{
+			System.out.println("[SerialComms] Error transmitting byte: " + b);
+			success = false;
+		}
+
+		return success;
+	}
+
+	/**
 	 * Disconnects from the serial port.
 	 *
 	 */
@@ -112,5 +135,6 @@ public class SerialComms {
 
 		return success;
 	}
+
 }
 
